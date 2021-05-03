@@ -1,0 +1,36 @@
+<html>
+    <head>
+            <title>Registrazione</title>
+    </head>
+    <body>
+            <h1>Registrazione al nostro portale</h1>
+            <form action="http://angnut.altervista.org/test/testInvio.php" method="POST">
+                <!--
+                    esempio di chiamata GET
+                    http://angnut.altervista.org/test/testInvio.php?lastname=Nutile&name=Angelo&city=av
+
+                 -->
+                <fieldset>
+                    <legend>Dati anagrafici</legend>
+                    <label>Cognome</label>
+                    <input type="text" name="lastname" 
+                        placeholder="il tuo cognome...">
+                    
+                    <label>Nome</label>
+                    <input type="text" name="name" 
+                            placeholder="il tuo nome...">
+                    
+                    <label>Città</label>
+                    <select name="city">
+                        <option value="av">Avellino</option>
+                        <option value="bn">Benevento</option>
+                        <option value="ce">Caserta</option>
+                        <option value="na">Napoli</option>
+                        <option value="sa">Salerno</option> 
+                    </select>
+
+                    <button>Invia</button>
+                </fieldset>
+            </form>
+    </body>
+</html>
