@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <script>
+            function cambia(valore) {
+               // recupero il tag da cui è partito l'evento
+               let tag = event.target;
+               // recupero il tag in cui dovrò aggiornare il valore in base 10
+               let risultato = document.getElementById("ris");
+               // verifico cosa c'era nella posizione cliccata dall'utente
+               if (tag.innerHTML==0) {
+                    // era presente 0 quindi devo scrivere 1 e aggiungere
+                    tag.innerHTML = 1;
+                    // aggiorno il risultato (parseInt converte in numero)
+                    let x = parseInt(risultato.innerHTML) + valore;
+                    // scrivo il risultato nel tag 
+                    risultato.innerHTML = x;
+               }else {
+                    // era presente 1 quindi devo scrivere 0 e sottrarre 
+                    tag.innerHTML = 0;
+                    let x = parseInt(risultato.innerHTML) - valore;
+                    risultato.innerHTML = x;
+               }
+            }
+        </script>
+        <style>
+            table, tr, td {
+                border:  2px solid black;
+                border-collapse: collapse;
+            }
+            td{
+                width: 50px;
+                height: 50px;
+                text-align: center;
+                font-size: 30;
+            }
+
+            .pesi td{
+                background-color: aquamarine;
+            }
+            .posizioni td{
+                background-color: aqua;
+            }
+            .binario td:hover {
+                cursor: pointer;
+                background-color: black;
+                color:white;
+            }
+            #ris {
+                background-color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Convertitore</h1>
+        <table>
+            <tr class="pesi">
+                <td>128</td>
+                <td>64</td>
+                <td>32</td>
+                <td>16</td>
+                <td>8</td>
+                <td>4</td>
+                <td>2</td>
+                <td>1</td>
+                <td class="testo">Pesi</td>
+            </tr>
+            <tr class="posizioni">
+                <td>7</td>
+                <td>6</td>
+                <td>5</td>
+                <td>4</td>
+                <td>3</td>
+                <td>2</td>
+                <td>1</td>
+                <td>0</td>
+                <td class="testo">Posizioni</td>
+            </tr>
+            <tr class="binario">
+                <td onclick="cambia(128)">0</td>
+                <td onclick="cambia(64)">0</td>
+                <td onclick="cambia(32)">0</td>
+                <td onclick="cambia(16)">0</td>
+                <td onclick="cambia(8)">0</td>
+                <td onclick="cambia(4)">0</td>
+                <td onclick="cambia(2)">0</td>
+                <td onclick="cambia(1)">0</td>
+                <td id="ris">0</td>
+            </tr>
+        </table>
+    </body>
+</html>
