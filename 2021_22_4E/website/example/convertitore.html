@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Numeri Binari</title>
+        <link rel="stylesheet" href="../css/convertitore.css">
+        <script>
+            function cambia(potenza){
+                // recupero il tag su cui ho fatto "click"
+                let source = event.target;
+                // recupero il valore attuale 0 oppure 1
+                let valore = source.innerHTML;
+                // cambio il valore in base al vecchio valore
+                if (valore == '0') 
+                    source.innerHTML = "1";
+                else 
+                    source.innerHTML = "0";
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Conversioni Binario Decimale</h1>
+        <h2>Gioca con noi</h2>
+        <table border="1">
+            <tr class="posizioni">
+                <td>7</td>
+                <td>6</td>
+                <td>5</td>
+                <td>4</td>
+                <td>3</td>
+                <td>2</td>
+                <td>1</td>
+                <td>0</td>
+                <td>Posizioni</td>
+            </tr>
+            <tr class="pesi">
+                <td>128</td>
+                <td>64</td>
+                <td>32</td>
+                <td>16</td>
+                <td>8</td>
+                <td>4</td>
+                <td>2</td>
+                <td>1</td>
+                <td>Pesi</td>
+            </tr>
+            <tr>
+                <td onclick="cambia(128)">0</td>
+                <td onclick="cambia(64)">0</td>
+                <td onclick="cambia(32)">0</td>
+                <td onclick="cambia(16)">0</td>
+                <td onclick="cambia(8)">0</td>
+                <td onclick="cambia(4)">0</td>
+                <td onclick="cambia(2)">0</td>
+                <td onclick="cambia(1)">0</td>
+                <td id="ris">0</td>
+            </tr>
+        </table>
+    </body>
+</html>
